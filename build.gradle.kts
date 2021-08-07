@@ -54,7 +54,7 @@ kotlin {
     publishing {
         repositories {
             maven {
-                name = "publishing-test"
+                name = "publishingtest"
                 url = uri("https://maven.pkg.github.com/battery-staple/PublishingTest")
                 credentials {
                     username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
@@ -64,6 +64,7 @@ kotlin {
         }
         publications {
             register<MavenPublication>("gpr") {
+                artifactId = "publishingtest"
                 from(components["kotlin"])
             }
          }
