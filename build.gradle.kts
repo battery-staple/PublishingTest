@@ -3,10 +3,12 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("multiplatform") version "1.5.21"
     `maven-publish`
+    id("net.researchgate.release") version "2.8.1"
 }
 
+
 group = "com.batterystaple"
-version = "1.0"
+println("version: $version")
 
 repositories {
     mavenCentral()
