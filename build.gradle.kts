@@ -1,6 +1,6 @@
 plugins {
     kotlin("multiplatform") version "1.5.21"
-    id("maven-publish")
+    `maven-publish`
 }
 
 group = "com.rohengiralt"
@@ -49,5 +49,23 @@ kotlin {
         val jsTest by getting
         val nativeMain by getting
         val nativeTest by getting
+    }
+
+    publishing {
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/OWNER/REPOSITORY")
+                credentials {
+                    username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
+                    password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
+                }
+            }
+        }
+        publications {
+            register<MavenPublication>("gpr") {
+                from(components["kotlin"])
+            }
+         }
     }
 }
