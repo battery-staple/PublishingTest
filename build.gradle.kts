@@ -3,7 +3,7 @@ plugins {
     `maven-publish`
 }
 
-group = "com.rohengiralt"
+group = "com.batterystaple"
 version = "1.0"
 
 repositories {
@@ -54,8 +54,8 @@ kotlin {
     publishing {
         repositories {
             maven {
-                name = "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/OWNER/REPOSITORY")
+                name = "PublishingTest"
+                url = uri("https://maven.pkg.github.com/battery-staple/PublishingTest")
                 credentials {
                     username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
                     password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
