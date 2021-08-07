@@ -54,7 +54,7 @@ kotlin {
     publishing {
         repositories {
             maven {
-                name = "PublishingTest"
+                name = "publishing-test"
                 url = uri("https://maven.pkg.github.com/battery-staple/PublishingTest")
                 credentials {
                     username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
