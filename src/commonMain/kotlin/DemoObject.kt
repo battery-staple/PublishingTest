@@ -1,3 +1,5 @@
+package com.batterystaple.publishingtest
+
 /**
  * Is a demo object.
  */
