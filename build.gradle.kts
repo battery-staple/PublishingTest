@@ -3,11 +3,15 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("multiplatform") version "1.5.21"
     `maven-publish`
-    id("net.researchgate.release") version "2.8.1"
+    id("com.palantir.git-version") version "0.12.3"
 }
 
 
 group = "com.batterystaple"
+
+val gitVersion: groovy.lang.Closure<String> by extra
+
+version = gitVersion()
 println("version: $version")
 
 repositories {
