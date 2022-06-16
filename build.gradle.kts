@@ -2,6 +2,7 @@
 plugins {
     kotlin("multiplatform") version "1.7.0"
     `maven-publish`
+    signing
     id("com.palantir.git-version") version "0.12.3"
 }
 
