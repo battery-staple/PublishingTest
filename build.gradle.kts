@@ -1,4 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("multiplatform") version "1.7.0"
@@ -7,11 +6,11 @@ plugins {
 }
 
 
-group = "com.batterystaple"
+group = "io.github.battery-staple"
 
 val gitVersion: groovy.lang.Closure<String> by extra
 
-version = gitVersion()
+val version = gitVersion()
 println("version: $version")
 
 repositories {
