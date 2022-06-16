@@ -10,7 +10,7 @@ group = "io.github.battery-staple"
 
 val gitVersion: groovy.lang.Closure<String> by extra
 
-val version = gitVersion()
+version = gitVersion()
 println("version: $version")
 
 repositories {
